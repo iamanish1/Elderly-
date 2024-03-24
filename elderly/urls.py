@@ -1,0 +1,16 @@
+from django.contrib import admin
+from django.urls import path,include
+from elderly import views 
+
+urlpatterns = [
+          path("",views.index,name="index"),
+          path("doctor",views.doctor,name="doctor"),
+          path("mental_health",views.mental_health,name="mental_health"),
+          path("health_report",views.health_report,name="health_report"),
+          path("sign",views.sign,name="sign.html"),
+          path("login",views.login,name="login.html"),
+          path("video_call",views.video_call,name="video_call.html"),
+
+    
+]
+
