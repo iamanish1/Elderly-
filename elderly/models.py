@@ -6,8 +6,9 @@ class doctor(models.Model):
  name=models.CharField(max_length=15)
  age=models.IntegerField()
  experience=models.IntegerField()
- speciality=models.CharField(max_length=15)
+ speciality=models.CharField(max_length=100)
  id=models.IntegerField()
+ api_key=models.TextField()
  location=models.CharField(max_length=15)
 
 class hospitals(models.Model):
