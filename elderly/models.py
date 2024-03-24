@@ -35,3 +35,7 @@ class patients(models.Model):
    allarges=models.CharField(max_length=15)
    health_status=models.BooleanField()
    mental_health=models.BooleanField()
+class api_keys(models.Model):
+  id=models.IntegerField(primary_key=True)
+  uname=models.TextField()
+  api_key=models.TextField()
