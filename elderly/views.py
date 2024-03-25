@@ -29,8 +29,6 @@ def login(request):
 def video_call(request):
     return render(request,"video_call.html")
 
-def doctor(request):
-    return render(request,"doctor.html")
 
-def doctor1(request):
+def doctor_1(request):
     return render(request,"doctor.html")
