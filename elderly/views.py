@@ -22,5 +22,5 @@ def video_call(request):
 def doctor(request):
     return render(request,"doctor.html")
 
-def doctor1(request):
-    return render(request,"doctor.html")
+# def doctor1(request):
+#     return render(request,"doctor.html")
