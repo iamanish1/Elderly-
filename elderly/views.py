@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse
-from elderly.models import api_keys,doctor
+from elderly.models import api_keys,doctor,hospitals
 # Create your views here.
 def index(request):
     
@@ -31,3 +31,13 @@ def video_call(request):
 
 def doctor_1(request):
     return render(request,"doctor.html")
+def hospitals_api(request,val):
+
+    api_keys_data=api_keys.objects.all()
+    hospitals_data=hospitals.objects.all()
+    lst=[]
+    for a in api_keys_data:
+        lst.append(a.api_key)
+    if val in lst:
+        return JsonResponse(list(hospitals_data.values()),safe=False)
+    return HttpResponse("Invalid API Key")
