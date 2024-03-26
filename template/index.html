@@ -1,11 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>hii3</h1>
-</body>
+  </head>
+  <body>
+    <div class="banner">
+      <div class="bannerImage">
+        <div class="imageBox">
+          <img src="elderly.png" alt="bannerImage" class="imgBanner" />
+        </div>
+      </div>
+      <div class="bannerText">
+        <div class="bannerTextDiv">
+          <p class="bannerTitle">ELDERLY</p>
+          <p class="bannerSlogan">
+            ( Connecting The elderly with their childrens )
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .banner {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+    background-color: #8cc3eb;
+    flex-wrap: wrap;
+  }
+  .border {
+    border: 1px solid black;
+  }
+
+  .bannerImage {
+    width: 90vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /*New Code*/
+  /*Small Device*/
+  @media (max-width: 700px) {
+    .banner {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+
+      background-color: #8cc3eb;
+      flex-wrap: wrap;
+      padding-bottom: 3vmin;
+    }
+    .bannerText {
+      width: 90vmin;
+      display: flex;
+      justify-content: center;
+      margin-top: 10vmin;
+    }
+    .bannerTitle {
+      font-weight: bold;
+      font-size: 11vmin;
+      color: white;
+    }
+    .bannerSlogan {
+      font-size: 4vmin;
+      color: white;
+    }
+  }
+  /*Tab Screens*/
+  @media (min-width: 701px) and (max-width: 900px) {
+    .banner {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+
+      background-color: #8cc3eb;
+      flex-wrap: wrap;
+      padding-bottom: 3vmin;
+    }
+    .bannerText {
+      width: 90vmin;
+      display: flex;
+      justify-content: center;
+      margin-top: 10vmin;
+    }
+    .bannerTitle {
+      font-weight: bold;
+      font-size: 9vmin;
+      color: white;
+    }
+    .bannerSlogan {
+      color: white;
+      font-size: 3.5vmin;
+    }
+  }
+  /*---- End for mobile and tab screens ---*/
+
+  /*--- For Mini and medium Laptops(13.5eg: macbook-air) */
+  @media (min-width: 901px) and (max-width: 1280px) {
+    @media (max-height: 770px) {
+      /*For Lenovo Thinkpad(small X390)*/
+      .bannerImage {
+        width: 85vmin;
+      }
+      .bannerText {
+        width: 85vmin;
+      }
+      .bannerTitle {
+        font-weight: bold;
+        font-size: 11vmin;
+        color: white;
+      }
+      .bannerSlogan {
+        color: white;
+        font-size: 3.5vmin;
+      }
+      .bannerTextDiv {
+        height: 25vmin;
+        width: 70vmin;
+        margin-top: 15vmin;
+        color: white;
+      }
+    }
+    @media (min-height: 771px) {
+      /*For macbook(13.5 inch screen)*/
+    }
+  }
+  /*For macbook(13.5inch eg:macbook-air)*/
+  /*--- For Mini and medium Laptops(14inch eg: macbook-air) */
+  @media (min-width: 1281px) and (max-width: 1440px) {
+    .bannerImage {
+      width: 80vmin;
+    }
+    .bannerText {
+      width: 80vmin;
+    }
+    .imageBox {
+      width: 90vmin;
+      height: 55vmin;
+    }
+    .bannerTitle {
+      font-weight: bold;
+      font-size: 8vmin;
+    }
+    .bannerSlogan {
+      font-size: 3.5vmin;
+    }
+    .imgBanner {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .bannerTextDiv {
+      height: 25vmin;
+      width: 70vmin;
+      margin-top: 15vmin;
+      color: white;
+    }
+  }
+
+  /*-----End for macbook-air sized laptops(14 inch) ----*/
+
+  /*--- For Large laptop screens(15.6inch)(Ex:- HP-Omen)---*/
+  @media (min-width: 1441px) and (max-width: 1727px) {
+  }
+  /*--- End of Large Screen code ---*/
+  /*--- For Very Large laptop screens (Ex:- Large Dell Latitude Screens,Macbook Pro)---*/
+  @media (min-width: 1728px) and (max-width: 2047px) {
+  }
+  /*--- For XX Large screens (Ex:- TVs,IMacs...)---*/
+  @media (min-width: 2048px) {
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+</style>
