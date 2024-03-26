@@ -32,6 +32,10 @@ def video_call(request):
 
 def doctor_1(request):
     return render(request,"doctor.html")
+
+def hospital(request):
+     return render(request,"hospital.html")
+
 def hospitals_api(request,val):
 
     api_keys_data=api_keys.objects.all()

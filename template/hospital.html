@@ -9,3 +9,26 @@
     
 </body>
 </html>
+<script>
+    fetch("http://127.0.0.1:8000/hospitals/v1/Elderly-311@admin")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        document.querySelector("body").innerHTML += `
+      <div class="doctorBox">
+       <div class="sub_box">
+      <h1 id="nm1">${data[i]["name"]}</h1>
+      <span id =hospital_id>${data[i]["hospital_id"]}</span>
+      <h3 id="ag1">${data[i]["location"]}</h3>
+      <p id="sp1">${data[i]["ambulance"]}</p>
+      </div> 
+    </div>
+      `;
+      }
+
+      console.log(data);
+      
+    });
+</script>

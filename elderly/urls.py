@@ -12,6 +12,7 @@ urlpatterns = [
           path("sign",views.sign,name="sign.html"),
           path("login",views.login,name="login.html"),
           path("video_call",views.video_call,name="video_call.html"),
+          path("hospital",views.hospital,name="hospital")
 
     
 ]
