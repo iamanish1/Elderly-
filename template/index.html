@@ -25,7 +25,23 @@
                     <li>Hospitals</li>
                 </ul>
             </div>
+
+            <div class="hamSection" id="HamBar">
+               <img src="static/hamburger.png" alt="Hamburger Icon" srcset="" height="25" width="25">
+            </div>
+
         </div>
+    </div>
+
+    <!---HamBurger NavBar Area-->
+    <div class="navHam" id="navHam">
+       <ul>
+        <li>About-us</li>
+        <li>Service</li>
+        <li>Login/Signup</li>
+        <li>Doctors</li>
+        <li>Hospitals</li>
+       </ul>
     </div>
     <!------->
 
@@ -196,6 +212,12 @@
 @media(max-width:700px){
     *{
         overflow-x: hidden;
+    }
+    .hamSection{
+       width:56vmin;
+       display: flex;
+       justify-content: flex-end;
+       padding-right: 3vmin;
     }
     .banner{
         width:100vw;
@@ -454,10 +476,32 @@
       list-style: none;
       margin-left: 3vmin;
    }
+   .navHam{margin-top: -1.75vmin;}
+   .navHam  ul li{
+       margin-top: 2.5vmin;
+       margin-left: 2vmin;
+       padding-bottom: 3vmin;
+       border-bottom: 1px solid skyblue;
+   }
 
 }
 /*Tab Screens*/
 @media(min-width:701px) and (max-width:900px){
+  .hamSection{
+       width:56vmin;
+       display: flex;
+       justify-content: flex-end;
+       padding-right: 3vmin;
+    }
+    .navHam{margin-top: -1.75vmin;}
+   .navHam  ul li{
+       margin-top: 1.75vmin;
+       margin-left: 2vmin;
+       list-style: none;
+       font-size: 3vmin;
+       padding-bottom: 3vmin;
+       border-bottom: 1px solid skyblue;
+   }
     .bannerImage{
         width:90vmin;
         display: flex; justify-content: center;
@@ -889,6 +933,9 @@
        font-style: normal;
     
     }
+    .hamSection{
+      display: none;
+    }
     .aboutImage{      margin-top: 2vmin;}
    .aboutTextHolder{
 
@@ -912,6 +959,7 @@
        width:70vmin;
        margin-top: 3vmin;
    }
+   .hamSection{display: none;}
    .imgBoxService{
        width: 65vmin;
        display: flex;
@@ -1027,6 +1075,9 @@
     }
     @media(min-height:771px) {
           /*For macbook(13.5 inch screen)*/
+          .hamSection{
+      display: none;
+    }
           .bannerImage{
         width: 75vmin;
      }
@@ -1342,6 +1393,9 @@
        width:70vmin;
        margin-top: 3vmin;
    }
+   .hamSection{
+    display: none;
+   }
    .imgBoxService{
        width: 65vmin;
        display: flex;
@@ -1461,6 +1515,9 @@
 
 /*--- For Large laptop screens(15.6inch)(Ex:- HP-Omen)---*/
 @media(min-width:1441px) and (max-width:1727px){
+  .hamSection{
+    display: none;
+  }
     body{
         overflow-x: hidden;
     }
@@ -1670,6 +1727,9 @@
 /*--- End of Large Screen code ---*/
 /*--- For Very Large laptop screens (Ex:- Large Dell Latitude Screens,Macbook Pro)---*/
 @media(min-width:1728px) and (max-width:2047px){
+  .hamSection{
+    display: none;
+  }
     .banner{
         height:55vmin;
     }
@@ -2236,6 +2296,9 @@
         width: 40vmin;
     
     }
+    .hamSection{
+      display: none;
+    }
    
 }
    
@@ -2249,3 +2312,21 @@
 
 
 </style>
+
+<script>
+   let state=false;
+   let hamBtn=document.getElementById("HamBar");
+   let navHam=document.getElementById("navHam");
+   navHam.style.display="none";
+   hamBtn.addEventListener('click',()=>{
+       if(state)
+        {
+          navHam.style.display="none";
+          state=false;
+        }
+        else{
+          navHam.style.display="block";
+          state=true;
+        }
+   })
+</script>
