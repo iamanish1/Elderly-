@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Basic template</title>
+</head>
+<body>
+    <button type="submit" class="btn" id="btn">
+        <a href="logout" style="color: black; text-decoration: none">Logout</a>
+    </button>
+      <div class="SegmentDashBoard">
+            <div class="mainHolder">
+                <div class="option1">
+                   <p id="opt1">Services Active</p>
+                    <div class="underline">
+
+                    </div>
+                </div>
+                <div class="option1">  <p id="opt2">Update Data</p>
+                    <div class="underline">
+                        
+                    </div>
+                </div>
+                <div class="option1">  <p id="opt3">Report Page</p>
+                    <div class="underline">
+                        
+                    </div>
+                </div>
+                <div class="option1">  <p id="opt4">Mental Heath AI</p>
+                    <div class="underline">
+                        
+                    </div>
+                </div>
+                <div class="option1"> <p id="opt5">Video Call App</p>
+                    <div class="underline">
+                        
+                    </div>
+                </div>
+            </div>
+      </div>
+</body>
+</html>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    
+    /*.banner{
+        width:100vw;
+        display: flex;
+        justify-content: center;
+    
+        background-color:#8CC3EB;
+        flex-wrap: wrap;
+
+    }
+    .border{
+         border: 1px solid black;
+    }
+    
+    .bannerImage{
+        width:90vmin;
+        display: flex; justify-content: center;
+        align-items: center;
+    }* for banner Screen/ 
+/*New Code*/
+/*Small Device Mobiles*/
+@media(max-width:700px){
+
+}
+/*Tab Screens*/
+@media(min-width:701px) and (max-width:900px){
+   
+
+}
+/*---- End for mobile and tab screens ---*/
+
+/*--- For Mini and medium Laptops(13.5eg: macbook-air) */
+@media(min-width:901px) and (max-width:1280px) {
+   
+    @media(max-height:770px) {
+              /*For Lenovo Thinkpad(small X390)*/
+  
+    }
+    @media(min-height:771px) {
+          /*For macbook(13.5 inch screen)*/
+    }
+     
+    }
+
+/*For macbook(13.5inch eg:macbook-air)*/
+/*--- For Mini and medium Laptops(14inch eg: macbook-air) */
+@media(min-width:1281px) and (max-width:1440px){
+   
+}
+
+/*-----End for macbook-air sized laptops(14 inch) ----*/
+
+/*--- For Large laptop screens(15.6inch)(Ex:- HP-Omen)---*/
+@media(min-width:1441px) and (max-width:1727px){
+    .mainHolder{
+        display: flex;
+        justify-content: center;
+    }
+    .mainHolder .option1{
+        margin-left: 9vmin;
+        margin-top: 3vmin;
+        font-size: 3.5vmin;
+    }
+    .btn{
+        margin-top: 3vmin;
+        padding: 1vmin;
+        margin-left: 1vmin;
+    }
+    .underline{
+        height: 1vmin;
+        margin-top: 1vmin;
+        background-color: black;
+        width:12vmin;
+    }
+}
+/*--- End of Large Screen code ---*/
+/*--- For Very Large laptop screens (Ex:- Large Dell Latitude Screens,Macbook Pro)---*/
+@media(min-width:1728px) and (max-width:2047px){
+      
+}
+
+/*--- For XX Large screens (Ex:- TVs,IMacs...)---*/
+@media(min-width:2048px){
+   
+   
+}
+</style>
+<script>
+    
+    let opt_id=0;
+    document.getElementsByClassName("underline")[opt_id].style.backgroundColor="orange"
+    document.getElementById("opt1").addEventListener('click',()=>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="black"
+        opt_id=0
+        changeColor()
+    })
+    document.getElementById("opt2").addEventListener('click',()=>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="black"
+        opt_id=1
+        changeColor()
+    })
+    document.getElementById("opt3").addEventListener('click',()=>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="black"
+       opt_id=2
+       changeColor()
+    })
+    document.getElementById("opt4").addEventListener('click',()=>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="black"
+        opt_id=3  
+        changeColor()
+    })
+    document.getElementById("opt5").addEventListener('click',()=>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="black"
+        opt_id=4
+        changeColor()
+    })
+
+    const changeColor = () =>{
+        document.getElementsByClassName("underline")[opt_id].style.backgroundColor="orange"
+    }
+</script>

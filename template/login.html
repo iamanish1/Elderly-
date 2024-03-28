@@ -13,15 +13,16 @@
             <p class="loginText">Login</p>
         
             <div class="imageholder">
-            <img src="login.avif" alt="icon" style="margin-top: 3vmin;" height="90" width="95">
+            <img src="static/login.avif" alt="icon" style="margin-top: 3vmin;" height="90" width="95">
             </div>
         </div>
         <form method="POST">
+            {% csrf_token %} 
             <div class="formHolderInput">
-            <input type="email" placeholder="Enter registered email..."><br>
-            <input type="password" placeholder="Enter password..."><br>
+            <input type="text" name="name" placeholder="Enter registered name..."><br>
+            <input type="password" name="password" placeholder="Enter password..."><br>
             
-            <p style="font-weight:bold;"><a href="responsiveSignup.html" style="text-decoration: none;color: rgb(5, 141, 199);">Don't have an account?</a></p>
+            <p style="font-weight:bold;"><a href="signup" style="text-decoration: none;color: rgb(5, 141, 199);">Don't have an account?</a></p>
             <button type="submit" class="btn">
                 Login
             </button>
