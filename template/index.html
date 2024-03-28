@@ -18,11 +18,11 @@
 
             <div class="nav-icons">
                 <ul>
-                    <li>About-us</li>
-                    <li>Services</li>
-                    <li>Login/Signup</li>
-                    <li>Doctors</li>
-                    <li>Hospitals</li>
+                    <li><a  href="#about" style="color: black;text-decoration: none;">About-us</a></li>
+                    <li><a  href="#services" style="color: black;text-decoration: none;">Services</a></li>
+                    <li><a  href="login" style="color: black;text-decoration: none;">Login/Signup</a></li>
+                    <li><a  href="doctor_1" style="color: black;text-decoration: none;">Doctors</a></li>
+                    <li><a  href="hospitals" style="color: black;text-decoration: none;">Hospitals</a></li>
                 </ul>
             </div>
 
@@ -132,9 +132,9 @@
         </div>
         <div class="location">
 
-            <p class="dataAddress">Address: Plot 19/20 IIMT College Of Engineering,<br>R&D Office,Greater Noida,20310</p>
+            <p class="dataAddress">Address: Plot 19/20,IIMT College Of Engineering,<br>R&D Office and Incubation Cell, Greater Noida,<br>20310</p>
             <p class="dataAddress">Email: aritra.chakraborty203@gmail.com</p>
-            <p class="dataAddress">Contact No: 7585824862</p>
+            <p class="dataAddress">Contact No: 7585824862 , 9382993983</p>
             <p class="dataAddress">Propreiter: Anish Gupta</p>
             <p class="dataAddress">Social links:
                 <ul class="socialLinks" style="margin-top: 3vmin;">
@@ -182,31 +182,6 @@
         display: flex; justify-content: center;
         align-items: center;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*New Code*/
 /*Small Device*/
 @media(max-width:700px){
@@ -481,12 +456,14 @@
        margin-top: 2.5vmin;
        margin-left: 2vmin;
        padding-bottom: 3vmin;
-       border-bottom: 1px solid skyblue;
+       border-bottom: 1px solid grey;
    }
 
 }
 /*Tab Screens*/
 @media(min-width:701px) and (max-width:900px){
+   
+
   .hamSection{
        width:56vmin;
        display: flex;
@@ -850,8 +827,15 @@
       
    .socialLinks li{
       display: block;
+
       list-style: none;
       margin-left: 3vmin;
+   }
+   .navHam  ul li{
+       margin-top: 2.35vmin;
+       margin-left: 2vmin;
+       padding-bottom: 2vmin;
+       border-bottom: 1px solid grey;
    }
 
 }
@@ -1517,6 +1501,9 @@
 @media(min-width:1441px) and (max-width:1727px){
   .hamSection{
     display: none;
+  }
+  .about{
+    margin-top: 4vmin;
   }
     body{
         overflow-x: hidden;
@@ -2307,12 +2294,7 @@
         max-height: 100%;
         object-fit: contain;
     }
-
-
-
-
 </style>
-
 <script>
    let state=false;
    let hamBtn=document.getElementById("HamBar");
