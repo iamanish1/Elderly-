@@ -4,7 +4,7 @@ from elderly import views
 
 urlpatterns = [
           path("",views.index,name="index"),
-          path("doctor_1",views.doctor_1,name="doctor"),
+          path("doctor1",views.doctor_1,name="doctor"),
           path("mental_health",views.mental_health,name="mental_health"),
           path("health_report",views.health_report,name="health_report"),
           path("doctors/v1/<str:val>",views.doctor_api,name="doctor_api"),
