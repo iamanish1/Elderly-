@@ -40,3 +40,11 @@ class api_keys(models.Model):
   id=models.IntegerField(primary_key=True)
   uname=models.TextField()
   api_key=models.TextField()
+
+class RegUser(models.Model):
+  id=models.AutoField(primary_key=True)
+  name=models.TextField()
+  mobile=models.TextField()
+  location=models.TextField()
+  email=models.EmailField()
+  patName=models.TextField()
