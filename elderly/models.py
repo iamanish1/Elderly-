@@ -16,7 +16,7 @@ class hospitals(models.Model):
   name=models.CharField(max_length=30)
   location=models.CharField(max_length=25)
   ambulances=models.IntegerField()
-
+  
 
 class prescription(models.Model):
   pres_id=models.IntegerField(primary_key=True)

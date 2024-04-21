@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
+</head>
+
+<body>
+    <div class="main-big-box">
+        <div class="nav-bar">
+
+        </div>
+        <div class="sub-main-box">
+            <div class="menu-bar">
+                <div class="section-1">
+
+                </div>
+                <div class="section-2">
+
+                </div>
+                <div class="section-3">
+
+                </div>
+            </div>
+            <div class="menu-bar-1">
+                <div class="stress-box">
+                <div class="mental-health">
+
+                </div>
+                <div class="stress-health">
+
+                </div>
+                </div>
+            </div>
+            <div class="menu-bar-2">
+                <div class="blood-level" >
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+            <div class="menu-bar-3">
+                <div class="previous-medical-history">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<style>
+    * {
+        border: 0;
+        padding: 0;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+
+    .main-big-box {
+
+        width: 100vw;
+    }
+
+    .nav-bar {
+        height: 10vmin;
+        width: 100vw;
+        /* border: 2px solid black; */
+        background-color: whitesmoke ;
+    }
+
+    .sub-main-box {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .menu-bar {
+
+        /* border: 2px solid black; */
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background: #8CC3EB; 
+        margin-top: 2vmin ;
+        padding: 2vmin ;
+    }
+
+    .menu-bar-1 {
+        /* border: 2px solid black; */
+        display: flex; 
+        justify-content: center ;
+        align-items: center ;
+        margin-top: 2vmin ;
+        padding-top: 2vmin ;
+        padding-bottom: 2vmin ;
+        background: #8CC3EB ;
+    }
+
+    .menu-bar-2 {
+        /* border: 2px solid black; */
+        display: flex; 
+        justify-content: space-evenly  ; 
+        margin-top: 2vmin ;
+        padding: 2vmin ;
+        flex-wrap: wrap ;
+        background: #8CC3EB ;
+    }
+
+    .menu-bar-3 {
+        /* border: 2px solid black; */
+        display: flex; 
+        justify-content: space-around  ; 
+        margin-top: 2vmin ;
+        padding-top: 2vmin ;
+        padding-bottom: 2vmin ;
+        flex-wrap: wrap ;
+        background: #8CC3EB ;
+    }
+
+    .section-1 {
+        height: 30vmin;
+        width: 30vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+    }
+
+    .section-2 {
+        height: 30vmin;
+        width: 30vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+    }
+
+    .section-3 {
+        height: 30vmin;
+        width: 30vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+    }
+    .stress-box{
+        display: flex; 
+    }
+    .mental-health{
+        height: 60vmin;
+        width: 100vmin;
+         /* border: 2px solid black;  */
+        background: whitesmoke ;
+        margin-right: 5vmin ;
+    }
+    .stress-health{
+        height: 60vmin;
+        width: 100vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+        
+    }
+    .blood-level{
+        height: 60vmin;
+        width: 140vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+    }
+    .previous-medical-history{
+        height: 60vmin;
+        width: 60vmin;
+        /* border: 2px solid black; */
+        background: whitesmoke ;
+
+    }
+</style>
+
+<script>
+    
+
+</script>
+
+</html>
