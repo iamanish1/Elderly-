@@ -1,50 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="main-box">
+    <div class="sub-main-box">
+      
+    </div>
+    <div class="card-main-box">
+      <div class="card" id="cards">
+        
+
+      </div>
+      <div class="card">
+
+      </div>
+      <div class="card">
+
+      </div>
+
+
+
+    </div>
+    
+  </div>
+</body>
+
 </html>
 
 <script>
-  fetch("http://127.0.0.1:8000/doctors/v1/Elderly-311@admin")
-    .then((response) => {
-      return response.json();
+   fetch("http://127.0.0.1:8000/doctors/v1/Elderly-311@admin")
+     .then((response) => {
+       return response.json();
     })
-    .then((data) => {
-      for (var i = 0; i < data.length; i++) {
-        document.querySelector("body").innerHTML += `
-      <div class="doctorBox">
-       <div class="sub_box">
-      <h1 id="nm1">${data[i]["name"]}</h1>
-      <h3 id="ag1">${data[i]["age"]}</h3>
-      <p id="sp1">${data[i]["speciality"]}</p>
-      </div> 
-    </div>
-      `;
-      }
+     .then((data) => {
+       for (var i = 0; i < data.length; i++) {
+         document.querySelector("body").innerHTML += `
+       <h1 id="nm1">${data[i]["name"]}</h1>
+       <h3 id="ag1">${data[i]["age"]}</h3>
+       <p id="sp1">${data[i]["speciality"]}</p>
+       `;
+       }
 
-      console.log(data);
-    });
+       console.log(data);
+
+   }); 
+   fetch("http://127.0.0.1:8000/doctors/v1/Elderly-311@admin")
+     .then((response) => {
+       return response.json();
+    })
+    .then((data)=>{
+      for(var i = 0; i<data.length ; i++){
+        document.getElementById("cards").innerHTML += `
+        <h1 id="nm1">${data[i]["name"]}</h1>
+       <h3 id="ag1">${data[i]["age"]}</h3>
+       <p id="sp1">${data[i]["speciality"]}</p>
+
+        `; 
+      }
+    })
+
 </script>
 <style>
-  *{
+  * {
     margin: 0;
-    padding: 0 ;
-    box-sizing: border-box ;
+    padding: 0;
+    box-sizing: border-box;
   }
-  .doctorBox{
-    background: aqua ;
-    height: 200px ;
-    width : 400px ; 
-   display: flex; 
-   justify-content: center ;
-   padding : 10px ; 
+  .main-box{
+    height: 100vh ;
+    width : 100vw ; 
   }
-  .sub_box{
-    background: white ;
-    
+  .sub-main-box{
+    height: 15vmin ;
+    width : 100vw ; 
+    border: 2px solid black ;
   }
+  .card-main-box{
+    /* height : 30vmin ;  */
+    width : 100vw ; 
+    border: 2px solid black ;
+    margin-top : 2vmin ; 
+    display: flex; 
+    justify-content: space-evenly ; 
+  }
+  .card{
+    height: 50vmin ;
+    width : 40vmin ; 
+    border : 2px solid black ; 
+  }
+ 
 </style>
