@@ -4,8 +4,9 @@ from django.http import JsonResponse,HttpResponse
 from elderly.models import api_keys,doctor,hospitals
 from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout as logouts
-from elderly.models import RegUser,doctor,patients,prescription
+from elderly.models import RegUser,doctor,patients,prescription,ambulance_book,RegUser2
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def index(request):
     
@@ -79,4 +80,30 @@ def hospitals_api(request,val):
         lst.append(a.api_key)
     if val in lst:
         return JsonResponse(list(hospitals_data.values()),safe=False)
+    return HttpResponse("Invalid API Key")
+def user(request):
+    return render(request,"user.html")
+def ambulance(request):
+    return render(request,"ambulance.html")
+def video(request):
+    return render(request,"video.html")
+def ambulance_api(request,val):
+    api_keys_data=api_keys.objects.all()
+    ambu_data=ambulance_book.objects.all()
+    lst=[]
+    for a in api_keys_data:
+        lst.append(a.api_key)
+    if val in lst:
+        return JsonResponse(list(ambu_data.values()),safe=False)
+    return HttpResponse("Invalid API Key")
+def prompt(request):
+    return render(request,"prompt.html")
+def user_api(request,val):
+    api_keys_data=api_keys.objects.all()
+    user_data=RegUser2.objects.all()
+    lst=[]
+    for a in api_keys_data:
+        lst.append(a.api_key)
+    if val in lst:
+        return JsonResponse(list(user_data.values()),safe=False)
     return HttpResponse("Invalid API Key")

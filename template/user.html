@@ -5,176 +5,463 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"></script>
 </head>
 
 <body>
     <div class="main-big-box">
-        <div class="nav-bar">
-
-        </div>
         <div class="sub-main-box">
-            <div class="menu-bar">
-                <div class="section-1">
-
+            <div class="user-head">
+            <h1>User Dashboard</h1>
+            </div>
+            <div class="logout-button-holder">
+                <button class="logout">logout</button>
+            </div>
+        </div>
+        <div class="big-menue-box">
+            <div class="paitient-box">
+                <div class="image-box">
+                    <img class="user-image" src="static/user1.png" alt="" srcset="">
                 </div>
-                <div class="section-2">
-
+                <div class="details-box" id="detail-box">
+                  
                 </div>
-                <div class="section-3">
+            </div>
+            <div class="med-history-box">
+                <div class="med-head">
+                    <h1>Medical History</h1>
+                </div>
+                <div class="main-box-combo">
+                    <div class="box1">
+                        <div class="main-bpm-image-box">
+                      <div class="bpm-image box" style="overflow: hidden ; margin-top: 2vmin ;">
+                        <img class="user-image" src="static/bpm.png" alt="" srcset="" height="150" width="150">
+                      </div>
+                        </div>
+                      <div class="main-bpm-head" id="bpm-val">
+                      <!-- <div class="Bpm-head" id="bpm-value" style="overflow: hidden ;">
+                        <h1>BPM:</h1>
+                    </div> -->
+                      </div>
+                    </div>
+                    <div class="box2">
+                        <div class="main-bpm-image-box">
+                            <div class="bpm-image box" style="overflow: hidden ; margin-top: 2vmin ;">
+                              <img class="user-image" src="static/spo2 icon.png" alt="" srcset="" height="150" width="150">
+                            </div>
+                              </div>
+                            <div class="main-bpm-head" id="spo2-box">
+                            <!-- <div class="Bpm-head" id="bpm-val" style="overflow: hidden ;">
+                              <h1>SPO2:</h1>
+                          </div> -->
+                            </div>
+      
+                    </div>
+                    <div class="box3">
+                    </div>
 
                 </div>
             </div>
-            <div class="menu-bar-1">
-                <div class="stress-box">
-                <div class="mental-health">
-
-                </div>
-                <div class="stress-health">
-
-                </div>
+            <div class="med-prec-box">
+                 <div class="med-prec-head">
+                    <h1>Medical prec</h1>
+                 </div>
+                <div class="med-prec-sub-box">
+                    <div class="image-box-1">
+                        <img class="user-image" src="static/doctors.png" alt="" srcset="">
+                    </div>
+                    <div class="details-box-1" id="detail-1">
+                        <!-- <div class="id" id="id-1">
+                            <h3>id:</h3>
+                         </div>
+                        <div class="name" id="name">
+                            <h3>Name:</h3>
+                         </div>
+                         <div class="Medicine" id="age">
+                             <h3>medecine:</h3>
+                         </div>
+                         <div class="Condition" id="history">
+                            <h3>Condition:</h3>
+                         </div> -->
+                    </div>
                 </div>
             </div>
-            <div class="menu-bar-2">
-                <div class="blood-level" >
-                    <canvas id="myChart"></canvas>
+            <div class="mental-condition-box">
+                <div class="med-head">
+                    <h1>Mental Health Condition</h1>
+                </div>
+                <div class="main-box-combo">
+                    <div class="box1">
+
+                    </div>
+                    <div class="box2">
+                        <div class="book-button-holder">
+                         <Button class="book-button">Book Appointement</Button>
+                        </div>
+                    </div>
+                    <div class="box4">
+                      <div class="index-box" id="index">
+                     <h3>index:</h3>
+                      </div>
+                      <div class="condition-box" style="margin-top: 2vmin ;">
+                        <h3>Condition:</h3>
+                      </div>
+                    </div>
+
                 </div>
 
-            </div>
-            <div class="menu-bar-3">
-                <div class="previous-medical-history">
-
-                </div>
             </div>
         </div>
     </div>
-
 </body>
+<script>
+     fetch("http://127.0.0.1:8000/userAPI/v1/Elderly-311@admin")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        document.getElementById("detail-1").innerHTML += `
+                         <div class="id" id="id-1">
+                            <h3>id: ${data[i]["id"]}</h3>
+                         </div>
+                        <div class="name" id="name">
+                            <h3>Name: ${data[i]["name"]}</h3>
+                         </div>
+                         <div class="Medicine" id="age">
+                             <h3>medecine: ${data[i]["medicine"]}</h3>
+                         </div>
+                         <div class="Condition" id="history">
+                            <h3>Condition: ${data[i]["condition"]}</h3>
+                         </div>
+      `;
+      }
+
+      console.log(data);
+      
+    });
+    fetch("http://127.0.0.1:8000/userAPI/v1/Elderly-311@admin")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        document.getElementById("detail-box").innerHTML += `
+        <div class="name" id="name">
+                       <h3>Name: ${data[i]["name"]}</h3>
+                    </div>
+                    <div class="age" id="age">
+                        <h3>Age: ${data[i]["age"]}</h3>
+                    </div>
+                    <div class="Med-hist" id="history">
+                       <h3>Medical history: ${data[i]["medical_history"]}</h3>
+                    </div>               
+      `;
+      }
+
+      console.log(data);
+      
+    });
+    fetch("http://127.0.0.1:8000/userAPI/v1/Elderly-311@admin")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        document.getElementById("bpm-val").innerHTML += `
+                    <div class="Bpm-head" id="bpm-value" style="overflow: hidden ;">
+                        <h1>BPM: ${data[i]["bpm"]}</h1>
+                    </div>
+                    
+      `;
+      }
+
+      console.log(data);
+      
+    });
+    fetch("http://127.0.0.1:8000/userAPI/v1/Elderly-311@admin")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      for (var i = 0; i < data.length; i++) {
+        document.getElementById("spo2-box").innerHTML += `
+            <div class="Bpm-head" id="bpm-val" style="overflow: hidden ;">
+                              <h1>SPO2: ${data[i]["sp_o2"]}</h1>
+                          </div>
+                    
+      `;
+      }
+
+      console.log(data);
+      
+    });
+
+
+    // .then((data) => {
+    //   for (var i = 0; i < data.length; i++) {
+    //     document.getElementById("box").innerHTML += `
+    //   <div class="card" id="box">
+    //     <div class="image-box">
+    //       <img class="hospital-image" src="static/hospital.webp" alt="" srcset="">
+    //       </div>
+    //   <div class="sub-card">
+    //   <h1 id="nm1">${data[i]["name"]}</h1>
+    //   <span id =hospital_id>Id: ${data[i]["hospital_id"]}</span>
+    //   <h3 id="ag1">${data[i]["location"]}</h3>
+    //   <p id="sp1">Ambulances: ${data[i]["ambulances"]}</p>
+    //   </div>
+    //   <div class="button-box">
+    //   <button class="book-bed" type="sumbit">Book Hospital Bed</button>
+    //   <div>
+    //   </div>
+     
+    //   `;
+    //   }
+
+    //   console.log(data);
+      
+    // });
+
+</script>
 <style>
     * {
-        border: 0;
+        margin: 0;
         padding: 0;
         box-sizing: border-box;
         overflow-x: hidden;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     .main-big-box {
-
+        height: 100vh;
         width: 100vw;
-    }
-
-    .nav-bar {
-        height: 10vmin;
-        width: 100vw;
-        /* border: 2px solid black; */
-        background-color: whitesmoke ;
     }
 
     .sub-main-box {
+        height: 12vmin;
+        width: 100vw;
+        /* border: 2px solid black; */
+        background: whitesmoke;
         display: flex;
-        justify-content: space-around;
-        flex-direction: column;
-        justify-content: space-around;
+        justify-content: space-evenly ;
+        align-items: center;
     }
 
-    .menu-bar {
 
-        /* border: 2px solid black; */
+    .big-menue-box {
         display: flex;
-        justify-content: space-around;
         flex-wrap: wrap;
-        background: #8CC3EB; 
-        margin-top: 2vmin ;
-        padding: 2vmin ;
+        justify-content: center;
     }
 
-    .menu-bar-1 {
+    .paitient-box {
+        /* height: 30vmin ; */
+        width: 100vw;
         /* border: 2px solid black; */
-        display: flex; 
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        margin-top: 2vmin;
+        background: #8CC3EB;
+    }
+
+    .med-history-box {
+        /* height: 30vmin ; */
+        width: 100vw;
+        /* border: 2px solid black; */
+        /* display: flex;
+        justify-content: space-around; */
+        margin-top: 2vmin;
+        background: #8CC3EB;
+    }
+
+    .med-head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-box-combo {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .med-prec-box {
+        width: 100vw;
+        /* border: 2px solid black; */
+        margin-top: 2vmin;
+        background: #8CC3EB;
+        display: flex;
+        justify-content: space-around ;
+        flex-direction: column ;
+    }
+    .med-prec-head{
+        display: flex;
         justify-content: center ;
         align-items: center ;
-        margin-top: 2vmin ;
-        padding-top: 2vmin ;
-        padding-bottom: 2vmin ;
-        background: #8CC3EB ;
     }
-
-    .menu-bar-2 {
-        /* border: 2px solid black; */
+    .med-prec-sub-box{
         display: flex; 
-        justify-content: space-evenly  ; 
-        margin-top: 2vmin ;
-        padding: 2vmin ;
+        flex-direction: row;
         flex-wrap: wrap ;
-        background: #8CC3EB ;
+        justify-content: space-around  ;
+        margin-bottom: 2vmin ;
+
+       
+    }
+    .mental-condition-box {
+        width: 100vw;
+        /* border: 2px solid black; */
+        /* display: flex;
+        justify-content: space-around; */
+        margin-top: 2vmin;
+        background: #8CC3EB;
     }
 
-    .menu-bar-3 {
+    .image-box {
+        height: 40vmin;
+        width: 70vmin;
         /* border: 2px solid black; */
+        /* margin-right: 40vmin; */
+        margin-top: 2vmin;
+        background: whitesmoke;
+        margin-bottom: 2vmin ;
+        border-radius: 1.5vmin ;
+        overflow: hidden ;
         display: flex; 
-        justify-content: space-around  ; 
-        margin-top: 2vmin ;
-        padding-top: 2vmin ;
-        padding-bottom: 2vmin ;
-        flex-wrap: wrap ;
-        background: #8CC3EB ;
+        justify-content: center ;
+    }
+    .image-box-1{
+        height: 50vmin;
+        width: 70vmin;
+        /* border: 2px solid black; */
+        /* margin-right: 40vmin; */
+        margin-top: 2vmin;
+        background: whitesmoke;
+        margin-bottom: 2vmin ;
+        border-radius: 1.5vmin ;
+        overflow: hidden ;
+        justify-content: center ;
+        align-items: center ;
     }
 
-    .section-1 {
-        height: 30vmin;
-        width: 30vmin;
+    .details-box {
+        height: 50vmin;
+        width: 120vmin;
         /* border: 2px solid black; */
-        background: whitesmoke ;
-    }
-
-    .section-2 {
-        height: 30vmin;
-        width: 30vmin;
-        /* border: 2px solid black; */
-        background: whitesmoke ;
-    }
-
-    .section-3 {
-        height: 30vmin;
-        width: 30vmin;
-        /* border: 2px solid black; */
-        background: whitesmoke ;
-    }
-    .stress-box{
+        margin-top: 2vmin;
+        background: whitesmoke;
+        margin-bottom: 2vmin ;
+        border-radius: 1.5vmin ;
         display: flex; 
+        flex-direction: column ;
+        justify-content: space-around ;
+        padding-left: 2vmin 
+        ;
     }
-    .mental-health{
-        height: 60vmin;
-        width: 100vmin;
-         /* border: 2px solid black;  */
-        background: whitesmoke ;
-        margin-right: 5vmin ;
-    }
-    .stress-health{
-        height: 60vmin;
-        width: 100vmin;
+     .details-box-1 {
+        height: 50vmin;
+        width: 120vmin;
         /* border: 2px solid black; */
-        background: whitesmoke ;
+        margin-top: 2vmin;
+        background: whitesmoke;
+        margin-bottom: 2vmin ;
+        border-radius: 1.5vmin ;
+        display: flex; 
+        flex-direction: column ;
+        justify-content: space-around ;
+        padding-left: 2vmin 
+     }
+    .box1 {
+        height: 50vmin;
+        width: 70vmin;
+        /* border: 2px solid black; */
+        margin: 2vmin;
+        background: whitesmoke;
+        border-radius: 1.5vmin ;
+        overflow:  hidden;
+        display: flex; 
+        flex-direction: column ;
+       /* justify-content: center;
+       align-items: center ; */
         
     }
-    .blood-level{
-        height: 60vmin;
-        width: 140vmin;
+
+    .box2 {
+        height: 50vmin;
+        width: 70vmin;
         /* border: 2px solid black; */
-        background: whitesmoke ;
+        margin: 2vmin;
+        background: whitesmoke;
+        border-radius: 1.5vmin ;
+        overflow:  hidden;
+        display: flex; 
+        flex-direction: column ;
     }
-    .previous-medical-history{
-        height: 60vmin;
-        width: 60vmin;
+
+    .box3 {
+        height: 50vmin;
+        width: 70vmin;
         /* border: 2px solid black; */
-        background: whitesmoke ;
+        margin: 2vmin;
+        background: whitesmoke;
+        border-radius: 1.5vmin ;
+    }
+    .box4{
+        height: 50vmin;
+        width: 70vmin;
+        /* border: 2px solid black; */
+        margin: 2vmin;
+        background: whitesmoke;
+        border-radius: 1.5vmin ;
+        display: flex;
+       justify-content: center ;
+       flex-direction: column ;
+       align-items: center ;
+      
 
     }
+    .user-image{
+        max-width: 100% ;
+        max-height: 100% ;
+        object-fit: contain ;
+    }
+   .main-bpm-head{
+    display: flex;
+    justify-content: start ;
+
+   }
+   .main-bpm-image-box{
+    display: flex;
+    justify-content: center ;
+   }
+   .Bpm-head{
+   padding-bottom: 2vmin ;
+   padding-left: 2vmin ;
+   }
+.book-button-holder{
+    height: 50vmin ;
+    display: flex;
+    justify-content: center ;
+    align-items: center ;
+}
+.book-button{
+    height:7vmin ;
+    width : 30vmin ; 
+    color: white;
+    background: black ;
+    font-size: 2.5vmin ;
+    border-radius: 1.5vmin ; 
+}
+.logout{
+    height : 5vmin ; 
+    width : 30vmin ; 
+    color: white;
+    background: black ;
+    border-radius: 2vmin ;
+    font-size: 2vmin ;
+   margin-left: 40vmin ;
+}
 </style>
-
-<script>
-    
-
-</script>
 
 </html>

@@ -48,3 +48,23 @@ class RegUser(models.Model):
   location=models.TextField()
   email=models.EmailField()
   patName=models.TextField()
+
+class ambulance_book(models.Model):
+  id=models.AutoField(primary_key=True)
+  hospital_name=models.TextField()
+  ambulance_num=models.TextField()
+  driver_mobile=models.TextField()
+  location=models.TextField()
+
+class RegUser2(models.Model):
+  id=models.AutoField(primary_key=True)
+  name=models.TextField()
+  age=models.TextField()
+  medical_history=models.TextField()
+  bpm=models.TextField()
+  sp_o2=models.TextField()
+  medicine=models.TextField()
+  condition=models.TextField()
+  
+
+ 
