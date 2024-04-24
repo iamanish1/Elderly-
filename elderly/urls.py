@@ -17,6 +17,7 @@ urlpatterns = [
           path("hospitals",views.hospital,name="hospital"),
           path("logout",views.logout,name="logout"),
           path("user",views.user,name="user"),
+          path("redirection",views.redirection,name="r"),
           path("ambulance",views.ambulance,name="ambulance"),
           path("video",views.video,name="video"),
           path("prompt",views.prompt,name="prompt")

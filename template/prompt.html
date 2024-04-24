@@ -1,209 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="main-box">
-        <div class="sub-main-box">
-            <div class="prompt-header">
-             <h1 class="prompt-heading">Mental health AI Predicter</h1>
-            </div>
-            <div class="form-box">
-                <div class="sub-form-box">
-                    <form>
-                        <div class="main-big-box">
-                        <div class="name-box">
-                            <h3 class="Name">Name</h3>
-                            <input class="input-box-name" type="text">
-                        </div>
-                        <div class="age-box">
-                            <h3 class="Name">Age</h3>
-                            <input class="input-box-age"  type="text">
-                        </div>
-                        <div class="gender-box">
-                            <h3 class="Name-gender">Gender</h3>
-                             <input class="input-box-gender"  type="text">                            
-                        </div>
-                        <div class="prompt1-box">
-                            <h3 class="Name">Prompt-1</h3>
-                            <input class="input-box"  type="text">
-                        </div>
-                        <div class="prompt2-box">
-                            <h3 class="Name">Prompt-2</h3>
-                            <input class="input-box"  type="text">
-                        </div>
-                        <div class="prompt3-box">
-                            <h3 class="Name">Prompt-3</h3>
-                            <input class="input-box"  type="text">
-                        </div>
-                        <div class="button-box">
-                            <button class="button-click" type="submit"> Calculate</button>
-                        </div>
-                       </div> 
-
-
-
-                    </form>
-                </div>
-            </div>
+      <div class="sub-main-box">
+        <div class="prompt-header">
+          <h1 class="prompt-heading">Mental health AI Predicter</h1>
         </div>
+        <div class="form-box">
+          <div class="sub-form-box">
+            <form method="post">
+              {% csrf_token %}
+              <div class="main-big-box">
+                <div class="name-box">
+                  <h3 class="Name">Name</h3>
+                  <input class="input-box-name" type="text" name="name" />
+                </div>
+                <div class="age-box">
+                  <h3 class="Name">Age</h3>
+                  <input class="input-box-age" type="text" name="age" />
+                </div>
+                <div class="gender-box">
+                  <h3 class="Name-gender">Gender</h3>
+                  <input class="input-box-gender" type="text" name="gender" />
+                </div>
+                <div class="gender-box">
+                  <h3 class="Name-gender">StressVal</h3>
+                  <input class="input-box-gender" type="text" name="level" />
+                </div>
+                <div class="prompt1-box">
+                  <h3 class="Name">Prompt-1</h3>
+                  <input class="input-box" type="text" name="prompt1" />
+                </div>
+                <div class="prompt2-box">
+                  <h3 class="Name">Prompt-2</h3>
+                  <input class="input-box" type="text" name="prompt2" />
+                </div>
+                <div class="prompt3-box">
+                  <h3 class="Name">Prompt-3</h3>
+                  <input class="input-box" type="text" name="prompt3" />
+                </div>
+                <div class="button-box">
+                  <button class="button-click" type="submit">Calculate</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-<style>
+  </body>
+  <style>
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-        font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .main-box {
-        height: 100vh;
-        width: 100vw;
+      height: 100vh;
+      width: 100vw;
     }
 
     .prompt-header {
-        height: 12vmin;
-        width: 100vw;
-        /* border: 2px solid black; */
-        background: whitesmoke;
+      height: 12vmin;
+      width: 100vw;
+      /* border: 2px solid black; */
+      background: whitesmoke;
     }
 
     .form-box {
-        /* height: 100vh; */
-        width: 100vw;
-        /* border: 2px solid black; */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 2vmin;
-        background: #8CC3EB;
+      /* height: 100vh; */
+      width: 100vw;
+      /* border: 2px solid black; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 2vmin;
+      background: #8cc3eb;
     }
 
     .sub-form-box {
-        /* height: 95vmin ; */
-        width : 150vmin ;  
-        /* border: 2px solid black; */
-        border-radius: 2vmin;
-        background: whitesmoke;
-        margin: 2vmin ;
+      /* height: 95vmin ; */
+      width: 150vmin;
+      /* border: 2px solid black; */
+      border-radius: 2vmin;
+      background: whitesmoke;
+      margin: 2vmin;
     }
-    .main-big-box{
-        display: flex; 
-        flex-direction: column ;
-        flex-wrap: wrap ; 
-        align-items: center ;
-        
+    .main-big-box {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
     }
-    .age-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* border: 2px solid black ; */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .age-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .gender-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* /* border: 2px solid black ;  */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .gender-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* /* border: 2px solid black ;  */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .prompt1-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* border: 2px solid black ; */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .prompt1-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .prompt2-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* border: 2px solid black ; */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .prompt2-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .prompt3-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* border: 2px solid black ; */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .prompt3-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .button-box{
-        width : 70vmin;
-        /* border: 2px solid black ; */
-        display: flex;
-        justify-content: center;
-        align-items: center ;
-        margin-bottom: 2vmin ;
+    .button-box {
+      width: 70vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2vmin;
     }
-    .button-click{
-        height: 5vmin ;
-        width : 70vmin ; 
-        border-radius: 2vmin ;
-        color: white;
-        background: black;
-        font-size: 2.5vmin ;
+    .button-click {
+      height: 5vmin;
+      width: 70vmin;
+      border-radius: 2vmin;
+      color: white;
+      background: black;
+      font-size: 2.5vmin;
     }
-    .name-box{
-        width : 120vmin;
-        height : 10vmin ; 
-        /* border: 2px solid black ; */
-        display: flex;
-        align-items: center ;
-        margin: 2vmin ;
+    .name-box {
+      width: 120vmin;
+      height: 10vmin;
+      /* border: 2px solid black ; */
+      display: flex;
+      align-items: center;
+      margin: 2vmin;
     }
-    .input-box{
-        margin-left: 8vmin ;
-        width : 80vmin ; 
-        height : 5vmin ; 
-        border-radius: 1.5vmin ;
+    .input-box {
+      margin-left: 8vmin;
+      width: 80vmin;
+      height: 5vmin;
+      border-radius: 1.5vmin;
     }
-    .input-box-age{
-        margin-left: 15vmin ;
-        width : 80vmin ; 
-        height : 5vmin ; 
-        border-radius: 1.5vmin ;
+    .input-box-age {
+      margin-left: 15vmin;
+      width: 80vmin;
+      height: 5vmin;
+      border-radius: 1.5vmin;
     }
-    .input-box-gender{
-       margin-left: 12vmin ; 
-        width : 80vmin ; 
-        height : 5vmin ; 
-        border-radius: 1.5vmin ;
-      
+    .input-box-gender {
+      margin-left: 12vmin;
+      width: 80vmin;
+      height: 5vmin;
+      border-radius: 1.5vmin;
     }
-    .input-box-name{
-        margin-left: 12vmin ; 
-        width : 80vmin ; 
-        height : 5vmin ; 
-        border-radius: 1.5vmin ;
+    .input-box-name {
+      margin-left: 12vmin;
+      width: 80vmin;
+      height: 5vmin;
+      border-radius: 1.5vmin;
     }
-    .Name{
-        font-size: 3.5vmin ;
-        margin-left: 5vmin ;
+    .Name {
+      font-size: 3.5vmin;
+      margin-left: 5vmin;
     }
-    .Name-gender{
-        font-size: 3.5vmin ;
-        margin-left: 3vmin ;
+    .Name-gender {
+      font-size: 3.5vmin;
+      margin-left: 3vmin;
     }
-    .prompt-header{
-        display: flex; 
-        justify-content: center;
-        align-items: center ;
+    .prompt-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-</style>
-
+  </style>
 </html>

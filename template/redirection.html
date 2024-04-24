@@ -1,19 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    .main-
-    
-</body>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box ;
+  </head>
+  <body>
+    <a href="/prompt"
+      ><button
+        style="
+          padding: 1vmin;
+          margin-top: 1vmin;
+          text-decoration: none;
+          margin-left: 1vmin;
+        "
+      >
+        Back Button
+      </button></a
+    >
+    <div class="cover">
+      <div
+        class="container-Box"
+        style="
+          width: 100vmin;
+          height: 60vmin;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        "
+      >
+        <p style="font-size: 6vmin; font-weight: bold">{{condition}}</p>
+        <p style="margin-top: 3vmin; font-size: 4vmin">
+          Mental Health Index:<span style="font-weight: bold"> {{level}}</span>
+        </p>
+      </div>
+    </div>
+  </body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
     }
-</style>
+    body {
+      background-color: skyblue;
+    }
+    .cover {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .container-Box {
+      background-color: blanchedalmond;
+    }
+  </style>
 </html>
