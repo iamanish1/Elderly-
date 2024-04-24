@@ -6,7 +6,8 @@ from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout as logouts
 from elderly.models import RegUser,doctor,patients,prescription,ambulance_book,RegUser2
 from django.contrib.auth.decorators import login_required
-
+from django.views.decorators.csrf import csrf_protect
+from django.core.mail import send_mail
 # Create your views here.
 def index(request):
     
@@ -47,19 +48,6 @@ def logout(request):
     logouts(request)
     return redirect("/")
 
-def login1(request):
-
-    if request.method=="POST":
-        name=request.POST.get("name")
-        password=request.POST.get("password")
-        user=authenticate(request,username=name,password=password)
-        if user is not None:
-            login(request,user)
-            return redirect("/dashboard")
-        else:
-            return HttpResponse("Invalid username or password")
-
-    return render(request,"login.html")
 @login_required(login_url="/login")
 def dashboard(request):
     return render(request,"dashboard.html")
@@ -81,10 +69,12 @@ def hospitals_api(request,val):
     if val in lst:
         return JsonResponse(list(hospitals_data.values()),safe=False)
     return HttpResponse("Invalid API Key")
+@login_required(login_url="/login")
 def user(request):
     return render(request,"user.html")
 def ambulance(request):
     return render(request,"ambulance.html")
+@login_required(login_url="/login")
 def video(request):
     return render(request,"video.html")
 def ambulance_api(request,val):
@@ -98,6 +88,19 @@ def ambulance_api(request,val):
     return HttpResponse("Invalid API Key")
 def prompt(request):
     return render(request,"prompt.html")
+@csrf_protect
+def Login(request):
+   
+    if request.method=="POST":
+        uname=request.POST.get("uname")
+        password=request.POST.get("password")
+        user=authenticate(request,username=uname,password=password)
+        if user is not None:
+            login(request,user)
+            return redirect("user")
+        else:
+            return HttpResponse("Invalid username or password")
+    return render(request,"login.html")
 def user_api(request,val):
     api_keys_data=api_keys.objects.all()
     user_data=RegUser2.objects.all()
