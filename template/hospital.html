@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-  <div class="big-main-box">
-  <div class="main-box">
-      <h1 class="hospital-head">Hospital</h1>
-  </div>
-  <div class="card-box" id="box" >
-
-  </div>
-  </div>
-</body>
+  </head>
+  <body>
+    <div class="big-main-box">
+      <div class="main-box">
+        <h1 class="hospital-head">Hospital</h1>
+      </div>
+      <div class="card-box" id="box"></div>
+    </div>
+  </body>
 </html>
 <script>
-    fetch("http://127.0.0.1:8000/hospitals/v1/Elderly-311@admin")
+  fetch("http://127.0.0.1:8000/hospitals/v1/Elderly-311@admin")
     .then((response) => {
       return response.json();
     })
@@ -43,53 +41,52 @@
       }
 
       console.log(data);
-      
     });
 </script>
 <style>
-  *{
-    margin: 0 ;
-    padding: 0 ;
-    box-sizing: border-box ;
-    font-family: Arial, Helvetica, sans-serif ;
-    overflow-x: hidden ;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
   }
-  .big-main-box{
-    height: 100vh ;
-    width : 100vw ; 
+  .big-main-box {
+    height: 100vh;
+    width: 100vw;
   }
-  .main-box{
-    height: 15vmin ;
-    width : 100vw ; 
+  .main-box {
+    height: 15vmin;
+    width: 100vw;
     /* border:  2px solid black ; */
   }
-  .card-box{
-     /* height : 30vmin ;  */
-     width: 100vw;
+  .card-box {
+    /* height : 30vmin ;  */
+    width: 100vw;
     /* border: 2px solid black; */
     margin-top: 2vmin;
     display: flex;
     justify-content: space-evenly;
-    background: #8CC3EB;
+    background: #8cc3eb;
     flex-wrap: wrap;
   }
-  .image-box{
-    height : 30vmin ; 
-    width : 40vmin ; 
+  .image-box {
+    height: 30vmin;
+    width: 40vmin;
     /* border : 2px solid black ;  */
-    margin-top: 2vmin ;
-    overflow:  hidden ;
+    margin-top: 2vmin;
+    overflow: hidden;
   }
- 
-  .sub-card{
+
+  .sub-card {
     /* border: 2px solid black ; */
-     width : 40vmin ;
-     height: 35vmin ;
-     margin-top: 2vmin ; 
+    width: 40vmin;
+    height: 35vmin;
+    margin-top: 2vmin;
   }
 
   .card {
-     height: 60vmin; 
+    height: 60vmin;
     width: 100vmin;
     /* border: 2px solid black; */
     background: whitesmoke;
@@ -97,41 +94,36 @@
     margin-right: 2vmin;
     line-height: 2;
     border-radius: 2vmin;
-    display: flex; 
-    justify-content: space-around ;
-    flex-wrap: wrap ;
-
-  
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
-.hospital-image{
-  max-width: 100% ; 
-  max-height: 100% ;
-  object-fit: contain ;
-  
-}
-.button-box{
-  /* border: 2px solid black ; */
-  height : 10vmin ; 
-  width : 70vmin ; 
-  display: flex;
-  justify-content: center ;
-  align-items: center ;
-  margin-top: 2vmin ;
-
-}
-.book-bed{
-  height : 5vmin ;
-  width : 70vmin ; 
-  color: white ;
-  background: black ;
-  border-radius: 1.5vmin ;
-  font-size : 2.5vmin ;  
-}
-.main-box{
-  display: flex;
-  justify-content: center ;
-  align-items: center ;
-  font-size: 5vmin ;
-}
-  
+  .hospital-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  .button-box {
+    /* border: 2px solid black ; */
+    height: 10vmin;
+    width: 70vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vmin;
+  }
+  .book-bed {
+    height: 5vmin;
+    width: 70vmin;
+    color: white;
+    background: black;
+    border-radius: 1.5vmin;
+    font-size: 2.5vmin;
+  }
+  .main-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5vmin;
+  }
 </style>
