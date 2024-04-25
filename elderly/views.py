@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.http import JsonResponse,HttpResponse
 from elderly.models import api_keys,doctor,hospitals
-import joblib
+#import joblib
 from django.contrib.auth import authenticate,login
 from django.contrib.auth import logout as logouts
 from elderly.models import RegUser,doctor,patients,prescription,ambulance_book,RegUser2
@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect
 from django.core.mail import send_mail
 # Create your views here.
-loaded_model=joblib.load("./savemodels/model_saved.joblib")
+#loaded_model=joblib.load("./savemodels/model_saved.joblib")
 def index(request):
     
     return render(request,"index.html")
@@ -72,6 +72,22 @@ def hospitals_api(request,val):
     if val in lst:
         return JsonResponse(list(hospitals_data.values()),safe=False)
     return HttpResponse("Invalid API Key")
+#Model simulation code
+def predict(age,g,l,p1,p2,p3):
+    arr=["lonely","pain","sad","anxious"]
+    if(p1 in arr and p2 in arr and p3 in arr):
+        res=0
+        return res
+    elif(p1 in arr and p2 in arr):
+        res=0
+        return res
+    elif(p2 in arr and p3 in arr):
+        res=0
+        return res
+    else:
+        res=1
+        return res
+
 @login_required(login_url="/login")
 def user(request):
     return render(request,"user.html")
@@ -119,8 +135,9 @@ def prompt(request):
         p1=promptDict[prompt1]
         p2=promptDict[prompt2]
         p3=promptDict[prompt3]
-        res=loaded_model.predict([[age,g,level,p1,p2,p3]])
-        if(res[0]==0):
+        #res=loaded_model.predict([[age,g,level,p1,p2,p3]])
+        res=predict(age,g,level,prompt1,prompt2,prompt3)
+        if(res==0):
             val="Not Okay !!! Needs medical attention"
         else:
            val="Okay ! Good mental Health"
